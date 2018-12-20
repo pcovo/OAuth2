@@ -9,7 +9,7 @@ public interface Usuarios extends JpaRepository <Usuario,Integer> {
 
 	public Usuario findById(int id);
 
-	@Query("select u from Usuario u where u.credenciais.email = :email")
+	@Query(" select u from Usuario u where u.credenciais.email = ?1 ")
 	public Optional<Usuario> findByEmail(String email);
 
 }
